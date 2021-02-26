@@ -1,5 +1,8 @@
 function hobbies(data) {
 	//validation
+	if (!data) {
+		return false;
+	}
 	//logic
 	const { selector, list } = data;
 	const DOM = document.querySelector(selector);
