@@ -1,0 +1,2 @@
+function hobbies() {}
+export { hobbies };

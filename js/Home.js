@@ -3,6 +3,7 @@
 /*hero */
 /*about me */
 /*hobies */
+import { hobbies } from "./components/hobbies/hobbies";
 /*achievements */
 /*services */
 /*resume */
@@ -20,6 +21,8 @@
 /*hero */
 /*about me */
 /*hobies */
+hobbies();
+
 /*achievements */
 /*services */
 /*resume */
