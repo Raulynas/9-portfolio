@@ -1,0 +1,16 @@
+.hobbie {
+	display: flex;
+	flex-direction: row;
+	background-color: #f9fafd;
+	border: 1px solid #ccc;
+}
+.hobbie > .icon {
+	padding: 10px;
+	border-right: 1px solid #ccc;
+}
+.hobbie > .text {
+	padding: 10px;
+}
+.hobbie:hover > .icon {
+	color: red;
+}

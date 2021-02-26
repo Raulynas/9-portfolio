@@ -1,9 +1,12 @@
 /*init/ main*/
-@import './components/reset.css';
-@import './components/layout.css';
+@import "./components/reset.css";
+@import "./components/variables.css";
+@import "./components/layout.css";
+@import "./components/utility.css";
 /* 3rd party */
 
 /* components */
+@import "./components/hobbies.css";
 
 /* CUSTOM HOME PAGE CSS */
 
