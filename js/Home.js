@@ -3,7 +3,8 @@
 /*hero */
 /*about me */
 /*hobies */
-import { hobbies } from "./components/hobbies/hobbies";
+import { hobbies } from "./components/hobbies/hobbies.js";
+import { hobbiesData } from "./data/hobbiesData.js";
 /*achievements */
 /*services */
 /*resume */
@@ -21,7 +22,7 @@ import { hobbies } from "./components/hobbies/hobbies";
 /*hero */
 /*about me */
 /*hobies */
-hobbies();
+hobbies(hobbiesData);
 
 /*achievements */
 /*services */
