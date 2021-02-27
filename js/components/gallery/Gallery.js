@@ -82,17 +82,31 @@ class Gallery {
 	}
 
 	render() {
+		this.DOM.classList.add("gallery");
 		this.DOM.innerHTML = this.renderFilter() + this.renderGallery();
 	}
 
 	renderFilter() {
-		return `<div class="col-12 center">PORTFOLIO FILTER</div>`;
+		return `<div class="col-12 center filter">PORTFOLIO FILTER</div>`;
 	}
 	renderGallery() {
-		const HTML = "";
+		let HTML = "";
+
 		for (const item of this.list) {
 			const validTags = item.tags.filter((tag) => typeof tag === "string" && tag !== "");
-			HTML += `<div class="col-12 col-sm-6 col-md-4">PORTFOLIO ITEM</div>`;
+
+			const img = this.imgPath + item.photo;
+
+			HTML += `<div class="col-12 col-sm-6 col-md-4 item">
+				<img src="${img}" alt="Portfolio image"/>
+				<div class="layer">
+					<i class="fa fa-camera"></i>
+				</div>
+				<div class="texts">
+					<div class="title">Title</div>
+					<div class="tags">tag1, tag2</div>
+				</div>
+			</div>`;
 		}
 		return HTML;
 	}
