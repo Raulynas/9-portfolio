@@ -11,6 +11,9 @@ describe("Tikrinimas parametru formatas", () => {
 		expect(hobbies([])).toBe("Duotas netinkamo tipo parametras");
 	});
 });
+
+
+
 describe("Parametro raktazodziu formatas", () => {
 	test("Tuscias objektas yra negalimas", () => {
 		expect(hobbies({})).toBe("Netinkamas raktazodziu kiekis");

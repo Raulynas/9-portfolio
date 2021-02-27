@@ -1,12 +1,30 @@
 .gallery {
 }
 .gallery > .filter {
+	text-align: center;
+}
+.gallery > .filter > .tag {
+	display: inline-block;
+	margin: 5px;
+	background-color: #fff;
+	color: #333;
+	padding: 7px 15px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+.gallery > .filter > .tag:hover,
+.gallery > .filter > .tag.active {
+	background-color: var(--main-color);
+	color: #fff;
+	box-shadow: 3px 0px 5px #999;
 }
 .gallery > .item {
 	overflow: hidden;
 	height: 250px;
 	position: relative;
-	box-shadow: 0 0 10px #999;
+	box-shadow: 10px 0px 10px #999;
 }
 .gallery > .item > img {
 	display: inline-block;
@@ -50,6 +68,12 @@
 	left: 0;
 	right: 0;
 	background-color: #fff;
+	text-align: center;
+	padding: 15px;
+}
+.gallery > .item > .texts > .title {
+	font-weight: bold;
+	font-size: 16px;
 }
 .gallery > .item:hover > .layer {
 	background-color: #0005;
