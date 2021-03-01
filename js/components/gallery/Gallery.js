@@ -1,8 +1,12 @@
 class Gallery {
-	constructor(params) {
+	constructor(params, renderingFunction) {
 		this.selector = params.selector;
 		this.imgPath = params.imgPath;
 		this.list = params.list;
+
+		this.renderingFunction = renderingFunction;
+
+		console.log(renderingFunction);
 
 		this.DOM = null;
 		this.filterDOM = null;
@@ -27,6 +31,9 @@ class Gallery {
 		}
 		// filter out invalid list objects
 		this.filterOutInvalidListObject();
+
+		// convert all tags to lowercase
+		this.convertAllTagsToLowerCase();
 
 		// render content
 		this.render();
@@ -80,6 +87,12 @@ class Gallery {
 		this.list = validData;
 	}
 
+	convertAllTagsToLowerCase() {
+		for (const item of this.list) {
+			item.tags = item.tags.map((tag) => tag.toLowerCase());
+		}
+	}
+
 	isValidItemTagArray(tagList) {
 		for (const tag of tagList) {
 			if (typeof tag === 'string' && tag !== '') {
@@ -88,7 +101,6 @@ class Gallery {
 		}
 		return false;
 	}
-
 	render() {
 		this.DOM.classList.add('gallery');
 		this.DOM.innerHTML = this.renderFilter() + this.renderGallery();
@@ -138,20 +150,8 @@ class Gallery {
 		let HTML = '';
 
 		for (const item of this.list) {
-			const validTags = item.tags.filter((tag) => typeof tag === 'string' && tag !== '');
-
-			const img = this.imgPath + item.photo;
-
 			HTML += `<div class="col-12 col-sm-6 col-md-4 item">
-				<img src="${img}" alt="Portfolio image"/>
-				<div class="layer">
-					<i class="fa fa-camera"></i>
-				</div>
-				<div class="texts">
-					<div class="title">${item.title}</div>
-					<div class="tags">${validTags.join(', ')}</div>
-				</div>
-			</div>`;
+			${this.renderingFunction(item, this.imgPath)}</div>`;
 		}
 		return HTML;
 	}
@@ -161,14 +161,26 @@ class Gallery {
 			const tag = this.tags[i];
 
 			tag.addEventListener('click', () => {
-				this.tags[this.activeTag].classList.remove('active');
-				tag.classList.add('active');
-				this.activeTag = i;
-
-				console.log(this.uniqueTags[i]);
-				console.log(tag.innerText);
+				this.updateGallery(tag, i);
 			});
 		}
+	}
+	updateGallery(tag, i) {
+		this.tags[this.activeTag].classList.remove('active');
+		tag.classList.add('active');
+		this.activeTag = i;
+
+		const tagName = this.uniqueTags[i];
+
+		this.list.forEach((item, index) => {
+			if (tagName === 'All') {
+				this.items[index].classList.remove('hidden');
+			} else if (item.tags.includes(tagName)) {
+				this.items[index].classList.remove('hidden');
+			} else {
+				this.items[index].classList.add('hidden');
+			}
+		});
 	}
 }
 export { Gallery };

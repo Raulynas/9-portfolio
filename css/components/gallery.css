@@ -1,5 +1,3 @@
-.gallery {
-}
 .gallery > .filter {
 	text-align: center;
 }
@@ -12,80 +10,26 @@
 	border: 1px solid #ccc;
 	border-radius: 6px;
 	transition: all 0.5s;
+	box-shadow: 3px 0px 5px #999;
 	cursor: pointer;
 }
-.gallery > .filter > .tag:hover,
+.gallery > .filter > .tag:hover {
+	background-color: var(--main-color);
+	color: #fff;
+}
+
 .gallery > .filter > .tag.active {
 	background-color: var(--main-color);
 	color: #fff;
-	box-shadow: 3px 0px 5px #999;
+	box-shadow: none;
 }
 .gallery > .item {
-	overflow: hidden;
+	/* overflow: hidden;
 	height: 250px;
 	position: relative;
+	border-radius: 3px; */
 	box-shadow: 10px 0px 10px #999;
 }
-.gallery > .item > img {
-	display: inline-block;
-	width: 100%;
-	position: absolute;
-	left: 50%;
-	top: 0;
-	transform: translateX(-50%) rotate(0deg);
-	transform-origin: center;
-	transition: all 0.5s;
-}
-.gallery > .item > .layer {
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: #0000;
-	transition: all 1s;
-}
-.gallery > .item > .layer > .fa {
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: #3c4858;
-	color: #fff;
-	opacity: 0;
-	transition: all 1s;
-}
-.gallery > .item > .texts {
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: #fff;
-	text-align: center;
-	padding: 15px;
-}
-.gallery > .item > .texts > .title {
-	font-weight: bold;
-	font-size: 16px;
-}
-.gallery > .item:hover > .layer {
-	background-color: #0005;
-}
-.gallery > .item:hover > .layer > .fa {
-	opacity: 1;
-}
-.gallery > .item:hover > .layer > .fa:hover {
-	color: #3c4858;
-	background-color: #fff;
-}
-.gallery > .item:hover > img {
-	width: 120%;
-	transform: translate(-50%, -10%) rotate(10deg);
+.gallery > .item.hidden {
+	display: none;
 }
