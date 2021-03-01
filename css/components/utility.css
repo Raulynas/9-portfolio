@@ -1,0 +1,29 @@
+.bg-grey {
+	background-color: var(--grey);
+}
+.bg-main {
+	background-color: var(--main-color);
+}
+.bg-footer {
+	background-color: var(--footer-color);
+}
+
+.center {
+	text-align: center;
+}
+
+h2 {
+	display: inline-block;
+	width: 100%;
+	font-size: 24px;
+	line-height: 30px;
+}
+p {
+	display: inline-block;
+	width: 100%;
+	font-size: 17px;
+	line-height: 22px;
+}
+.section-title {
+	text-align: center;
+}

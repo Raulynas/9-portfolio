@@ -1,0 +1,35 @@
+.gallery > .filter {
+	text-align: center;
+}
+.gallery > .filter > .tag {
+	display: inline-block;
+	margin: 5px;
+	background-color: #fff;
+	color: #333;
+	padding: 7px 15px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	transition: all 0.5s;
+	box-shadow: 3px 0px 5px #999;
+	cursor: pointer;
+}
+.gallery > .filter > .tag:hover {
+	background-color: var(--main-color);
+	color: #fff;
+}
+
+.gallery > .filter > .tag.active {
+	background-color: var(--main-color);
+	color: #fff;
+	box-shadow: none;
+}
+.gallery > .item {
+	/* overflow: hidden;
+	height: 250px;
+	position: relative;
+	border-radius: 3px; */
+	box-shadow: 10px 0px 10px #999;
+}
+.gallery > .item.hidden {
+	display: none;
+}

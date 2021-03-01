@@ -26,6 +26,8 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
+        "no-continue": "off",
+        "indent": "off",
         "node/no-unpublished-require": [
             "error",
             {
@@ -38,5 +40,6 @@
                 ]
             }
         ]
+        
     }
 }
